@@ -1,27 +1,18 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTree;
-import javax.swing.JTextPane;
-import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.SystemColor;
 import java.awt.Color;
-import javax.swing.JProgressBar;
-import javax.swing.JSpinner;
 import javax.swing.JSeparator;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
@@ -45,49 +36,50 @@ public class Questions extends JFrame {
 		JLabel lblIcon = new JLabel("");
 		lblIcon.setBounds(12, 13, 137, 148);
 		contentPane.add(lblIcon);
-		
+
 		Image img = new ImageIcon(this.getClass().getResource("/images/computer.png")).getImage();
 		setIconImage(img);
-		
+
 		Image logo = new ImageIcon(this.getClass().getResource("/images/background.png")).getImage();
-		lblIcon.setIcon(new ImageIcon(logo));;
-		
+		lblIcon.setIcon(new ImageIcon(logo));
+		;
+
 		JSeparator separator = new JSeparator();
 		separator.setBounds(12, 174, 1066, 13);
 		contentPane.add(separator);
-		
+
 		JLabel lblQuestion_title = new JLabel("Query : -");
 		lblQuestion_title.setFont(new Font("Arial", Font.BOLD, 30));
 		lblQuestion_title.setHorizontalAlignment(SwingConstants.CENTER);
 		lblQuestion_title.setBounds(66, 184, 193, 46);
 		contentPane.add(lblQuestion_title);
-		
+
 		JLabel lblQuestion = new JLabel(Ques.getQuestion(Count));
 		lblQuestion.setForeground(Color.ORANGE);
 		lblQuestion.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblQuestion.setBounds(64, 243, 1014, 174);
 		contentPane.add(lblQuestion);
-		
-		JLabel lblNumber = new JLabel(String.valueOf(Count+1));
+
+		JLabel lblNumber = new JLabel(String.valueOf(Count + 1));
 		lblNumber.setForeground(Color.RED);
 		lblNumber.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 25));
 		lblNumber.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNumber.setBounds(271, 186, 56, 46);
 		contentPane.add(lblNumber);
-		
+
 		JLabel lblOptions_title = new JLabel("Options :- ");
 		lblOptions_title.setFont(new Font("Arial", Font.BOLD, 30));
 		lblOptions_title.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOptions_title.setBounds(66, 444, 193, 46);
 		contentPane.add(lblOptions_title);
-		
+
 		JLabel lblOptions = new JLabel(Ques.getOptions(Count));
 		lblOptions.setForeground(Color.BLUE);
 		lblOptions.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblOptions.setHorizontalAlignment(SwingConstants.LEFT);
 		lblOptions.setBounds(64, 503, 1014, 174);
 		contentPane.add(lblOptions);
-		
+
 		ButtonGroup bg = new ButtonGroup();
 		JRadioButton rdbtnD = new JRadioButton("D");
 		rdbtnD.setForeground(Color.GREEN);
@@ -95,95 +87,101 @@ public class Questions extends JFrame {
 		rdbtnD.setBounds(844, 686, 127, 25);
 		bg.add(rdbtnD);
 		contentPane.add(rdbtnD);
-		
+
 		JRadioButton rdbtnC = new JRadioButton("C");
 		rdbtnC.setForeground(Color.GREEN);
 		rdbtnC.setFont(new Font("Arial", Font.PLAIN, 20));
 		rdbtnC.setBounds(621, 686, 127, 25);
 		bg.add(rdbtnC);
 		contentPane.add(rdbtnC);
-		
+
 		JRadioButton rdbtnB = new JRadioButton("B");
 		rdbtnB.setFont(new Font("Arial", Font.PLAIN, 20));
 		rdbtnB.setForeground(Color.GREEN);
 		rdbtnB.setBounds(349, 686, 127, 25);
 		bg.add(rdbtnB);
 		contentPane.add(rdbtnB);
-		
+
 		JRadioButton rdbtnA = new JRadioButton("A");
 		rdbtnA.setFont(new Font("Arial", Font.PLAIN, 20));
 		rdbtnA.setForeground(Color.GREEN);
 		rdbtnA.setBounds(138, 686, 127, 25);
 		bg.add(rdbtnA);
 		contentPane.add(rdbtnA);
-		
+
 		JButton btnNext = new JButton("Next");
 		btnNext.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnNext.setForeground(Color.BLACK);
 		btnNext.setBounds(826, 766, 165, 53);
 		contentPane.add(btnNext);
-		
-		JLabel lblEnglishQuiz = new JLabel("Muhammad Hasan");
-		lblEnglishQuiz.setForeground(Color.RED);
-		lblEnglishQuiz.setFont(new Font("Consolas", Font.BOLD, 25));
-		lblEnglishQuiz.setHorizontalAlignment(SwingConstants.CENTER);
-		lblEnglishQuiz.setBounds(369, 66, 427, 39);
-		contentPane.add(lblEnglishQuiz);
-		
-		JLabel lblMadanMohanMalaviya = new JLabel("Leeds Beckett University");
-		lblMadanMohanMalaviya.setForeground(Color.RED);
-		lblMadanMohanMalaviya.setFont(new Font("Consolas", Font.BOLD, 35));
-		lblMadanMohanMalaviya.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMadanMohanMalaviya.setBounds(161, 13, 917, 53);
-		contentPane.add(lblMadanMohanMalaviya);
-		
-		JLabel lblEnglishQuiz_1 = new JLabel("Smart System");
-		lblEnglishQuiz_1.setForeground(Color.BLUE);
-		lblEnglishQuiz_1.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblEnglishQuiz_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblEnglishQuiz_1.setBounds(301, 118, 533, 46);
-		contentPane.add(lblEnglishQuiz_1);
-		
+
+		JLabel lblSmartSys = new JLabel("Muhammad Hasan");
+		lblSmartSys.setForeground(Color.RED);
+		lblSmartSys.setFont(new Font("Consolas", Font.BOLD, 25));
+		lblSmartSys.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSmartSys.setBounds(369, 66, 427, 39);
+		contentPane.add(lblSmartSys);
+
+		JLabel lblMyName = new JLabel("Leeds Beckett University");
+		lblMyName.setForeground(Color.RED);
+		lblMyName.setFont(new Font("Consolas", Font.BOLD, 35));
+		lblMyName.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMyName.setBounds(161, 13, 917, 53);
+		contentPane.add(lblMyName);
+
+		JLabel lblTitle = new JLabel("Smart System");
+		lblTitle.setForeground(Color.BLUE);
+		lblTitle.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitle.setBounds(301, 118, 533, 46);
+		contentPane.add(lblTitle);
+
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(208, 101, 847, 13);
 		contentPane.add(separator_1);
-		
-		
+
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(rdbtnA.isSelected())
+				if (rdbtnA.isSelected())
 					S.setAnswer(Count, "A");
 
-				if(rdbtnB.isSelected())
+				if (rdbtnB.isSelected())
 					S.setAnswer(Count, "B");
 
-				if(rdbtnC.isSelected())
+				if (rdbtnC.isSelected())
 					S.setAnswer(Count, "C");
 
-				if(rdbtnD.isSelected())
+				if (rdbtnD.isSelected())
 					S.setAnswer(Count, "D");
-					
+
 				Count++;
 				bg.clearSelection();
-				
-				if(Count == 4) {
+
+				if (Count == 4) {
 					btnNext.setText("Submit");
 					btnNext.setForeground(Color.BLUE);
 					btnNext.setBackground(Color.GREEN);
 				}
-				
-				if(Count == 5) {
-					Result frame3 = new Result(S,(int)getLocationOnScreen().getX(), (int)getLocationOnScreen().getY());
+
+				// due to IOException
+				if (Count == 5) {
+					Result frame3 = null;
+					try {
+						frame3 = new Result(S, (int) getLocationOnScreen().getX(), (int) getLocationOnScreen().getY());
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					JOptionPane.showMessageDialog(null, "Operation Completed Successfully!");
 					frame3.setVisible(true);
 					setVisible(false);
 				}
 				lblQuestion.setText(Ques.getQuestion(Count));
-				lblNumber.setText(String.valueOf(Count+1));
+				lblNumber.setText(String.valueOf(Count + 1));
 				lblOptions.setText(Ques.getOptions(Count));
-				
+
 			}
 		});
-			
+
 	}
 }

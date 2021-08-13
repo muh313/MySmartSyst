@@ -1,6 +1,4 @@
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
 
@@ -11,16 +9,16 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
-import javax.swing.JCheckBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 public class Result extends JFrame {
 
 	private JPanel contentPane;
 
-	public Result(User temp, int X, int Y) {
+	public Result(User temp, int X, int Y) throws IOException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Result");
 		setResizable(false);
@@ -31,7 +29,7 @@ public class Result extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		Image img = new ImageIcon(this.getClass().getResource("/images/smartsyst.png")).getImage();
+		Image img = new ImageIcon(this.getClass().getResource("/images/computer.png")).getImage();
 		setIconImage(img);
 		
 		JLabel lblIcon = new JLabel("");

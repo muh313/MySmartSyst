@@ -1,6 +1,4 @@
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
 
@@ -53,7 +51,8 @@ public class Description extends JFrame {
 		txtrYouHave.setOpaque(false);
 		txtrYouHave.setForeground(Color.DARK_GRAY);
 		txtrYouHave.setLineWrap(true);
-		txtrYouHave.setText("> Users are given 5 minutes to complete\r\n\r\n> The following questions will determine the environment level.\r\n\r\n> Levels : 1-5\r\n\r\n> "
+		txtrYouHave.setText("> Users are given 5 minutes to complete\r\n\r\n> The following questions will determine the environment level.\r\n\r\n> Levels : 0-5 "
+				+ "(0 being the safest level / 5 being the most dangerous level)\r\n\r\n> "
 				+ "You may use online resources, which may be provided..");
 		txtrYouHave.setFont(new Font("Lucida Console", Font.PLAIN, 40));
 		txtrYouHave.setEditable(false);
